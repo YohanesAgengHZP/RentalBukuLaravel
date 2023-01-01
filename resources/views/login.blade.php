@@ -42,7 +42,7 @@
                     <input type="password" name="password" id="password" class="form-control" required>
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary form-control">Login</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </div>
                 <div class="text-center">
                     <a href="register">Sign up</a>
