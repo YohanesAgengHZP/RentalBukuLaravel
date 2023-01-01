@@ -33,7 +33,7 @@ class AuthController extends Controller
                 return redirect('/login');
             }
             
-            $request->session()->regenerate();
+            // $request->session()->regenerate();
             if(Auth::user()->role_id == 1) {
                 return redirect('dashboard');
             }
@@ -47,5 +47,13 @@ class AuthController extends Controller
         Session()->flash('message', 'login invalid');
         return redirect('/login');
         
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('login');
     }
 }
