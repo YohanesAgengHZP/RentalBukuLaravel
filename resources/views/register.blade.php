@@ -25,35 +25,46 @@
 
 <body>
     <div class="main d-flex flex-column justify-content-center align-items-center">
-        @if (session('status'))
-        <div class="alert alert-danger">
-            {{ session('message') }}
-        </div>
-        @endif
+            @if ($errors->any())
+            <div class="alert alert-danger" style="width:500px">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
+            @if (session('status'))
+            <div class="alert alert-success" style="width: 500px">
+                {{ session('message') }}
+            </div>
+            @endif
+
         <div class="register-box">
             <form action="" method="post">
                 @csrf
                 <div>
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" required>
+                    <input type="text" name="username" id="username" class="form-control" >
                 </div>
                 <div>
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" required>
+                    <input type="password" name="password" id="password" class="form-control" >
                 </div>
                 <div>
                     <label for="phone" class="form-label">Phone Number</label>
-                    <input type="text" name="phone" id="phone" class="form-control" required>
+                    <input type="text" name="phone" id="phone" class="form-control" >
                 </div>
                 <div>
                     <label for="address" class="form-label">Address</label>
-                    <textarea name="address" id="address" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="address" id="address" cols="30" rows="10" class="form-control"></textarea >
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
                 <div class="text-center">
-                    <a href="login">Login</a>
+                    Already have an account?<a href="login"> Login </a>
                 </div>
             </form>
         </div>

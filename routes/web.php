@@ -26,6 +26,7 @@ Route::middleware('only_guest')->group(function(){
     Route::get('login', [AuthController::class, 'login'])->name('login');
     Route::post('login', [AuthController::class, 'authenticating']);
     Route::get('register', [AuthController::class, 'register']);
+    Route::post('register', [AuthController::class, 'registerProcess']);
 
 });
 
