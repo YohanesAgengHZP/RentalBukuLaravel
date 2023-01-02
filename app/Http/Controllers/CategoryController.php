@@ -15,6 +15,7 @@ class CategoryController extends Controller
 
     public function add()
     {
+        // $categories = Category::all();
         return view('category-add');
     }
 
@@ -51,8 +52,7 @@ class CategoryController extends Controller
     {
         $category = Category::where('slug',$slug)->first();
         return view('category-delete',['category' => $category]);
-        
-
+    
     }
 
     public function destroyProcess($slug)

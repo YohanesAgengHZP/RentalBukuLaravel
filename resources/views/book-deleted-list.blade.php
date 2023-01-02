@@ -2,14 +2,14 @@
 
 @section('title', 'Deleted Category')
 
-@section('page-name', 'category')
+@section('page-name', 'books')
 
 @section('content')
-   <h1>Deleted Category List</h1>
+   <h1>Deleted Books List</h1>
 
-    <div class="mt-3 d-flex justify-content-end">
-        <a href="/categories" class="btn btn-primary">Back</a>
-    </div>
+   <div class="mt-3 d-flex justify-content-end">
+        <a href="/books" class="btn btn-primary">Back</a>
+   </div>
 
     <div class="mt-5">
         @if (session('status'))
@@ -24,17 +24,19 @@
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Names</th>
+                <th>Code</th>
+                <th>Title</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($deletedCategories as $item)
+            @foreach ($deletedBooks as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->name }}</td>
+                    <td>{{ $item->book_code }}</td>
+                    <td>{{ $item->title }}</td>
                     <td>
-                        <a href="category-restore/{{ $item->slug }}">Restore</a>
+                        <a href="/book-restore/{{ $item->slug }}">Restore</a>
                     </td>
                 </tr>
             @endforeach

@@ -40,7 +40,17 @@ Route::middleware('auth')->group(function(){
     Route::get('profile', [UserController::class, 'profile'])->middleware(['only_client']);
     
     Route::get('books', [BookController::class, 'index']);
+    Route::get('books-add', [BookController::class, 'addBooks']);
+    Route::post('books-add', [BookController::class, 'createBooks']);
+    Route::get('book-edit/{slug}', [BookController::class, 'editBooks']);
+    Route::post('book-edit/{slug}', [BookController::class, 'updateBooks']);
+    Route::get('book-delete/{slug}', [BookController::class, 'deleteBooks']);
+    Route::get('book-destroy/{slug}', [BookController::class, 'destroyBooks']);
+    Route::get('book-deleted', [BookController::class, 'deletedBooks']);
+    Route::get('book-restore/{slug}', [BookController::class, 'restoreBooks']);
+    Route::get('book-restore/{slug}', [BookController::class, 'restoreBooks']);
     
+
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('category-add', [CategoryController::class, 'add']);
     Route::post('category-add', [CategoryController::class, 'addProcess']);
