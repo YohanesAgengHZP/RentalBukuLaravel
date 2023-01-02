@@ -1,17 +1,11 @@
 @extends('layouts.mainlayout')
 
-@section('title', 'Category')
+@section('title', 'Deleted Category')
 
 @section('page-name', 'category')
 
 @section('content')
-   <h1>Category List</h1>
-
-    <div class="mt-5 d-flex justify-content-end">
-
-        <a href="category-deleted" class="btn btn-secondary mr-3"> View Deleted Data</a>
-        <a href="category-add" class="btn btn-primary"> Add Data</a>
-    </div>
+   <h1>Deleted Category List</h1>
 
     <div class="mt-5">
         @if (session('status'))
@@ -31,13 +25,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($categories as $item)
+            @foreach ($deletedCategories as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->name }}</td>
                     <td>
-                        <a href="category-edit/{{ $item->slug }}">Edit</a>
-                        <a href="category-delete/{{ $item->slug }}">Delete</a>
+                        <a href="category-restore/{{ $item->slug }}">Restore</a>
                     </td>
                 </tr>
             @endforeach
