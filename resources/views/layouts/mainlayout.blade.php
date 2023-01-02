@@ -6,45 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Rental Buku @yield('title')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
-<style>
-    .main {
-        height: 100vh;
-    }
-
-    /* .body-content {
-        background: black;
-        color: white;
-    } */
-
-     .row.no-gutter {
-    margin-left: 0;
-    margin-right: 0;
-    }
-
-    .row.no-gutter [class*='col-']:not(:first-child),
-    .row.no-gutter [class*='col-']:not(:last-child) {
-    padding-right: 0;
-    padding-left: 0;
-    }
-
-    .sidebar{
-        background: rgb(157, 152, 152);
-        color: white;
-    } 
-
-    .sidebar a {
-        color: white;
-        text-decoration: none;
-        display: block;
-        padding:20px 10px;
-    }
-
-    .sidebar a:hover{
-        background: rgb(130, 130, 203);
-    }
-</style>
 <body>
     <div class="main d-flex flex-column justify-content-between">
         <nav class="navbar navbar-dark navbar-expand-lg navbar-light bg-info">
@@ -58,15 +22,38 @@
             <div class="row no-gutter h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSupportedContent">
                         @if (Auth::user()-> role_id == 1)
-                            <a href="dashboard">Dasboard</a>
-                            <a href="books">Books</a>
-                            <a href="#">Categories</a>
-                            <a href="#">Users</a>
-                            <a href="#">Rent</a>
+                            <a href="dashboard" 
+                            @if (request()->route()->uri == 'dashboard')
+                                class ='active'
+                            @endif>Dasboard</a>
+                            
+                            <a href="books"
+                            @if (request()->route()->uri == 'books')
+                                class ='active'
+                            @endif>Books</a>
+                           
+                            <a href="categories"
+                            @if (request()->route()->uri == 'categories')
+                                class ='active'
+                            @endif>Categories</a>
+                            
+                            <a href="users"
+                            @if (request()->route()->uri == 'users')
+                                class ='active'
+                            @endif>Users</a>
+                            
+                            <a href="rent-logs"
+                            @if (request()->route()->uri == 'rent-logs')
+                                class ='active'
+                            @endif>Rent Log</a>
                             <a href="logout">Logout</a>
 
                         @else
-                            <a href="profile">Profile</a>
+                            <a href="profile"
+                            @if (request()->route()->uri == 'profile')
+                                class ='active'
+                            @endif>Profile</a>
+                            
                             <a href="logout">Logout</a>
                         @endif
                 </div>

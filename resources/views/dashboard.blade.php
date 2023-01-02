@@ -2,6 +2,81 @@
 
 @section('title', 'Dashboard')
 
+@section('page-name', 'dashboard')
+
 @section('content')
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui accusantium, assumenda quia sit consectetur, reiciendis eum sunt adipisci labore explicabo mollitia et aspernatur soluta, dolorem maxime! Nobis, ullam. Quod, autem, eaque aspernatur molestiae sunt quisquam officiis voluptatum praesentium enim eius quidem itaque animi eligendi numquam asperiores harum magnam excepturi? Labore sint tenetur ad exercitationem impedit corrupti corporis nam provident dolor reiciendis. Dolore, ipsam tempore optio laborum veniam exercitationem? Iusto, maxime ab aspernatur molestiae optio ut rem vitae neque delectus eius, explicabo dolores tempore, cum odit pariatur? Dicta saepe quaerat sapiente modi odit quos libero veritatis iste velit nemo sequi, facilis quas repellat fugit architecto voluptate, esse obcaecati, provident atque. Quod dolore et ducimus ullam debitis a odio eligendi non, impedit ipsum dicta quae dolor hic! Corrupti quae ad fuga dolore voluptates, aperiam voluptatum sequi debitis distinctio quis perferendis vel sit cum deleniti, ipsum itaque vitae obcaecati perspiciatis asperiores molestiae libero placeat fugit. Dolores adipisci maxime ipsam aperiam reiciendis harum temporibus tempora modi, optio quisquam beatae dolorem ab omnis delectus voluptas qui at architecto ex neque cumque sint officia. Facere asperiores totam ullam necessitatibus vero reprehenderit nam quia hic, harum error laudantium, maxime cum ab perferendis consequuntur! Dolor, omnis distinctio, facere provident at veniam vero labore qui illum eligendi unde quasi voluptatem beatae ipsa ratione nisi soluta, esse voluptates dignissimos debitis dolore officiis vitae ipsam doloribus. Dignissimos quo libero vero facilis placeat provident a ratione saepe molestiae officia accusantium vitae, atque odio recusandae sit excepturi natus cupiditate quidem esse nisi temporibus. Dolor esse ullam animi nesciunt maiores, id hic iusto autem culpa nemo dolore doloremque exercitationem laborum, cumque quae sequi eveniet ipsum molestiae quos sunt laudantium asperiores numquam! Expedita quasi sit vitae nesciunt dolorum provident perspiciatis quae molestias ut doloremque at ipsam in voluptatum eum illum suscipit officia, quas nobis similique aut. Eum officia aperiam quo inventore, eaque, laborum exercitationem sint consequuntur hic harum fugit sed repudiandae facilis minus earum iusto repellat explicabo! Deserunt corporis quasi obcaecati deleniti dignissimos laudantium iure minus eaque quia expedita! Provident, necessitatibus? Nemo facere quo hic quasi accusantium asperiores facilis! Eos amet dolor eum totam pariatur, cumque natus voluptates numquam sunt sit harum. Nulla, error ipsa? Soluta omnis quis maxime id quisquam, eaque dignissimos inventore nihil veritatis odit atque? Facere, architecto. Eaque soluta ratione ut voluptate corporis mollitia dignissimos delectus voluptates dolorum eligendi laborum libero quidem sit, hic at consequatur. Soluta temporibus et, aut similique tempore repudiandae quisquam incidunt, laudantium atque vel explicabo, ullam enim sapiente tempora. Velit alias delectus quia ipsum quasi unde, vel optio necessitatibus soluta, maxime ad deserunt quod ipsa, ut ducimus perferendis natus voluptatem fugiat non officiis aut quis minus. Sequi minus dolores possimus unde culpa voluptatem illum, molestias autem laboriosam impedit hic facere est repellat eius odit omnis illo, ex, ducimus ab aliquid? Facilis aspernatur eveniet maiores ducimus autem? Mollitia quia velit et illo temporibus odio nulla ex ducimus facere voluptates, maxime aut quae deleniti excepturi quam debitis adipisci iure voluptatibus id dolores saepe placeat obcaecati! Laborum ab quae error eligendi.</p>
+
+    <h1>Welcome, {{ Auth::user()->username }}</h1>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card-data books">
+                <div class="row">
+                    <div class="col"><i class="bi bi-journal-bookmark"></i></div>
+                    <div class="col d-flex flex-column justify-content-center align-items-end">
+                        <div class="card-desc">Books</div>
+                        <div class="card-total">{{ $book_count }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card-data category">
+                <div class="row">
+                    <div class="col"><i class="bi bi-list-stars"></i></div>
+                    <div class="col d-flex flex-column justify-content-center align-items-end">
+                        <div class="card-desc">Category</div>
+                        <div class="card-total">{{ $category_count }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card-data user">
+                <div class="row">
+                    <div class="col"><i class="bi bi-person"></i></div>
+                    <div class="col d-flex flex-column justify-content-center align-items-end">
+                        <div class="card-desc">Users</div>
+                        <div class="card-total">{{ $user_count }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h2>Rent Logs</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">User</th>
+                <th scope="col">Book Title</th>
+                <th scope="col">Rent Date</th>
+                <th scope="col">Return Date</th>
+                <th scope="col">Actual Return Date</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 @endsection
