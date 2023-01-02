@@ -9,7 +9,6 @@ class UserController extends Controller
 {
     public function profile()
     {
-        // $request->session()->flush();
-    // //    dd(Auth::user());
+       return view('profile');
     }
 }
