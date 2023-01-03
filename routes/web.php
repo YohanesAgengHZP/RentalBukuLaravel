@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\RentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RentLogController;
@@ -71,6 +72,9 @@ Route::middleware('auth')->group(function(){
         Route::get('users-deleted', [UserController::class, 'deleted']);
         Route::get('users-restore/{slug}', [UserController::class, 'restore']);
     
+        Route::get('book-rent', [RentController::class, 'rentBooks']);
+        Route::post('book-rent', [RentController::class, 'storeBooks']);
+
     });
 
     Route::get('rent-logs', [RentLogController::class, 'index']);
