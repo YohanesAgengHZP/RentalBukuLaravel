@@ -78,3 +78,8 @@ padding-left: 0;
   .detail-content {
     font-weight: bold;
   }
+
+.row-search {
+    width: 500px;
+    margin-right: 20px;
+}
