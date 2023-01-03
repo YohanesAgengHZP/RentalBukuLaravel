@@ -52,12 +52,17 @@
                             <a href="/"
                             @if (request()->route()->uri == '/')
                                 class ='active'
-                            @endif>Book-list</a>
+                            @endif>Book list</a>
 
                             <a href="/book-rent"
                             @if (request()->route()->uri == 'book-rent')
                                 class ='active'
-                            @endif>Book-Rent</a>
+                            @endif>Book Rent</a>
+
+                            <a href="/book-return"
+                            @if (request()->route()->uri == 'book-return')
+                                class ='active'
+                            @endif>Book Return</a>
                             
                             <a href="/logout">Logout</a>
 
