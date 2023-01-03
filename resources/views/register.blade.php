@@ -54,11 +54,11 @@
                 </div>
                 <div>
                     <label for="phone" class="form-label">Phone Number</label>
-                    <input type="text" name="phone" id="phone" class="form-control" >
+                    <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}" >
                 </div>
                 <div>
                     <label for="address" class="form-label">Address</label>
-                    <textarea name="address" id="address" cols="30" rows="10" class="form-control"></textarea >
+                    <textarea name="address" id="address" cols="30" rows="10" class="form-control" value="{{ old('address') }}"></textarea >
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary">Register</button>

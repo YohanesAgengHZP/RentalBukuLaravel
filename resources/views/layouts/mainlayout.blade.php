@@ -38,7 +38,7 @@
                             @endif>Categories</a>
                             
                             <a href="/users"
-                            @if (request()->route()->uri == 'users')
+                            @if (request()->route()->uri == 'users' || request()->route()->uri == 'registered-users'|| request()->route()->uri == 'users-detail/{slug}' || request()->route()->uri == 'users-approve/{slug}')
                                 class ='active'
                             @endif>Users</a>
                             

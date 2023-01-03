@@ -2,23 +2,13 @@
 
 @section('title', 'User Page')
 
-@section('page-name', 'user profile')
+@section('page-name', 'Registered profile')
 
 @section('content')
-    <h1>User List</h1>
+    <h1>New Registered/Inactive User List</h1>
 
     <div class="mt-5 d-flex justify-content-end">
-
-        <a href="/users-deleted" class="btn btn-secondary mr-3"> View Banned User</a>
-        <a href="/registered-users" class="btn btn-primary"> New Registered User</a>
-    </div>
-
-    <div class="mt-5">
-        @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-        @endif
+        <a href="/users" class="btn btn-primary"> Approved Registered User</a>
     </div>
 
     <div class="my-4">
@@ -32,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($users as $item)
+                @foreach ($registeredUsers as $item)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->username }}</td>
@@ -45,13 +35,9 @@
                     </td>
                     <td>
                         <a href="/users-detail/{{ $item->slug }}">Detail</a>
-                        <a href="/users-banned/{{ $item->slug }}">Ban User</a>
                     </td>
                 </tr>
                 @endforeach
-                {{-- <tr>
-                    <td>{{ $loop->iteration }}</td>
-                </tr> --}}
             </tbody>
         </table>
    </div>

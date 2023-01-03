@@ -75,3 +75,6 @@ padding-left: 0;
     margin-right: 40px;
   }
 
+  .detail-content {
+    font-weight: bold;
+  }
