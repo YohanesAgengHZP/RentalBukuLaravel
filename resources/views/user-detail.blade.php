@@ -7,6 +7,10 @@
 @section('content')
     <h1>Detail User</h1>
 
+    <div class="mt-3 d-flex justify-content-end">
+        <a href="/users" class="btn btn-primary">Back</a>
+    </div>
+
     <div class="mt-5 d-flex justify-content-end">
         @if ($user->status == 'Inactive')
             <a href="/users-approve/{{ $user->slug }}" class="btn btn-info"> Approved Registered User</a>        
@@ -41,6 +45,10 @@
             <label for="" class="form-label"> Status</label>
             <input type="text" name="" id="" class="form-control" readonly value="{{ $user->status }}">
         </div>
-        
+   </div>
+
+   <div class="mt-5">
+    <h2>User's Rent Log</h2>
+        <x-rent-log-table :rentlog='$rent_logs'/>
    </div>
 @endsection

@@ -14,7 +14,7 @@ class RentController extends Controller
 {
     public function rentBooks()
     {
-        $users = User::where('role_id','!=', '1')->get();
+        $users = User::where('role_id','!=', '1')->where('status','!=', 'Inactive')->get();
         $books = Book::all();
 
         return view('books-rent',['users' => $users, 'books'=>$books]);
