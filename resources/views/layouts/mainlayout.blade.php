@@ -21,6 +21,8 @@
         <div class="body-content h-100">
             <div class="row no-gutter h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSupportedContent">
+                    @if (Auth::user())  
+
                         @if (Auth::user()-> role_id == 1)
                             <a href="dashboard" 
                             @if (request()->route()->uri == 'dashboard')
@@ -46,6 +48,12 @@
                             @if (request()->route()->uri == 'rent-logs')
                                 class ='active'
                             @endif>Rent Log</a>
+
+                            <a href="/"
+                            @if (request()->route()->uri == '/')
+                                class ='active'
+                            @endif>Book-list</a>
+                            
                             <a href="/logout">Logout</a>
 
                         @else
@@ -53,13 +61,24 @@
                             @if (request()->route()->uri == 'profile')
                                 class ='active'
                             @endif>Profile</a>
-                            
-                            <a href="logout">Logout</a>
+
+                            <a href="/"
+                            @if (request()->route()->uri == '/')
+                                class ='active'
+                            @endif>Book-list</a>
+
+                            <a href="/logout">Logout</a>
                         @endif
+                    @else
+                    <a href="login">Login</a>
+
+                    @endif
                 </div>
+
                 <div class="content p-5 col-lg-10">
                     @yield('content')
                 </div>
+                
             </div>
         </div>
     </div>

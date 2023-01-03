@@ -18,7 +18,7 @@ class OnlyClient
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user()->role_id != 2){
-            return redirect('books');
+            return redirect('/');
         }
         return $next($request);
     }

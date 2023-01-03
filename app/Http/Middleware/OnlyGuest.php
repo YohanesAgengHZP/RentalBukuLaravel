@@ -18,7 +18,7 @@ class OnlyGuest
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user()){
-            return redirect('books');
+            return redirect('/');
         }
         return $next($request);
     }
