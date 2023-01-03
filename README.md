@@ -65,7 +65,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-### Rental Buku Laravel | Information System
+# Rental Buku Laravel | Information System
 Project ini merupakan proyek pembelajaran bagi saya untuk mereview dan mendalami apa itu framework Laravel. Secara singkat proyek rental buku ini terdapat dua halaman yakni halaman admin dan halaman user.
 
 Halaman Admin berisi hal - hal yang dapat mengatur isi dan setting dari system rental buku sebagai admin.
