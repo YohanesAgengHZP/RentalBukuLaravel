@@ -64,4 +64,36 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# RentalBukuLaravel
+
+### Rental Buku Laravel | Information System
+Project ini merupakan proyek pembelajaran bagi saya untuk mereview dan mendalami apa itu framework Laravel. Secara singkat proyek rental buku ini terdapat dua halaman yakni halaman admin dan halaman user.
+
+Halaman Admin berisi hal - hal yang dapat mengatur isi dan setting dari system rental buku sebagai admin.
+Halaman Client berisi tampilan untuk user.
+
+## Feature
+- LOGIN dan REGISTER PAGE
+- Membedakan fungsional berdasar role (admin/user)
+- Melihat detail buku (admin)
+- Melihat, menambahkan, mengedit, menghapus, menambahkan kembali CATEGORY yang telah dihapus
+- Melakukan aktivasi user, melihat user yang active, melihat user yang belum active , melihat user yang telah diban
+- Melihat log peminjaman
+- Melihat macam - macam buku (admin/user)
+- Mengisi form pinjam buku (admin)
+- Mengisi form return buku (admin)
+- Pencarian data
+- Logout
+
+## Challenges
+- Pengetahuan laravel yang masih minim membuat beberapa hal seperti debugging dan implementasi fitur lebih lama.
+-Inkonsistensi dalam variabel membuat dalam hal pengecekan atau debugging terkendala.
+
+## Selanjutnya
+- Styling pada dashboard lebih bagus
+- Fitur - fitur yang memungkinkan ditambahkan
+
+## Kesimpulan
+- Dengan adanya dan dibuatnya proyek ini, pengetahuan mengenai framework laravel bertambah
+- best practice yang digunakan dan konfigurasi laravel bertambah
+
+## Proyek SELESAI
